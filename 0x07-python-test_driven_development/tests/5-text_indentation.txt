@@ -1,0 +1,77 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+First import ``text_indentation`` from the ``5-text_indentation`` module
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+1. With text without the characters(., ?, :)
+	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit""")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+2. With text with the characters(., ?, :)
+	>>> text_indentation("Hello, my name is Michael. I'm studying programming. \
+	... What language I'm studying now? I'm learning Python")
+	Hello, my name is Michael.
+	<BLANKLINE>
+	I'm studying programming.
+	<BLANKLINE>
+	What language I'm studying now?
+	<BLANKLINE>
+	I'm learning Python
+
+3. With some spaces after the '.' character
+	>>> text_indentation("Hello, my name is Michael.   I'm 25 year old")
+	Hello, my name is Michael.
+	<BLANKLINE>
+	I'm 25 year old
+
+4. With text without space after the '?' character
+	>>> text_indentation("Is Python awesome?Yes, it is awesome")
+	Is Python awesome?
+	<BLANKLINE>
+	Yes, it is awesome
+
+5. With spaces at the begginnig and the end of the text
+	>>> text_indentation("  Hello world. Welcome Python   ")
+	Hello world.
+	<BLANKLINE>
+	Welcome Python
+
+6. With empty text
+	>>> text_indentation("")
+
+7. With '\n' character in the text
+	>>> text_indentation("Hello.\nWorld")
+	Hello.
+	<BLANKLINE>
+	<BLANKLINE>
+	World
+
+8. With characters(., ?, :) and spaces
+	>>> text_indentation("  .??  : .")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+
+9. The text must be a string
+	>>> text_indentation([1, 2, 3])
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+10. The function requires the text
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
