@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """
 This module supplies a function that prints a text
 with 2 new lines after some characters
