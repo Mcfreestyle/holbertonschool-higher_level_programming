@@ -1,0 +1,44 @@
+The ``7-base_geometry`` module
+==============================
+
+Using ``BaseGeometry`` class
+----------------------------
+
+First import ``BaseGeometry`` from the ``7-base_geometry`` module
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Testing `area` method
+---------------------
+
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+Testing `integer_validation` method
+-----------------------------------
+
+1. Correct arguments
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+
+2. The second argument is not integer
+	>>> bg.integer_validator("name", "John") #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	TypeError: ... must be an integer
+
+3. The second argument is equal to 0
+	>>> bg.integer_validator("age", 0) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ... must be greater than 0
+
+4. The second argument is less than 0
+	>>> bg.integer_validator("distance", -4) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ... must be greater than 0
+
+5. Without arguments
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
