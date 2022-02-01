@@ -69,8 +69,19 @@ Now use it:
 	Traceback (most recent call last):
 	TypeError: '<' not supported between instances of 'str' and 'int'
 	
-11. You can use the method print_sorted with the instances of MyList
+11. With a list with a None item
+	>>> my_list = MyList([1, 4, None, -2])
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+12. You can use the method print_sorted with the instances of MyList
 	>>> my_list = [1, 4, 5, 2]
 	>>> my_list.print_sorted()
 	Traceback (most recent call last):
 	AttributeError: 'list' object has no attribute 'print_sorted'
+
+13. You have to call the method from an instance
+	>>> MyList.print_sorted()
+	Traceback (most recent call last):
+	TypeError: print_sorted() missing 1 required positional argument: 'self'
