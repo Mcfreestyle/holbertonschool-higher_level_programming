@@ -8,6 +8,9 @@ def pascal_triangle(n):
     Args:
         n: size of the triangle
     """
+    if n <= 0:
+        return ([])
+
     l1 = [[1]]
     l2 = []
     for i in range(1, n):
