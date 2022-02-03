@@ -122,16 +122,19 @@ class Rectangle(Base):
         for h in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates the attributes of the object"""
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[i]
-            if i == 1:
-                self.width = args[i]
-            if i == 2:
-                self.height = args[i]
-            if i == 3:
-                self.x = args[i]
-            if i == 4:
-                self.y = args[i]
+
+        argc = len(args)
+        if argc > 5:
+            argc = 5
+
+        attrs = ["id", "width", "height", "x", "y"]
+        if argc > 0:
+            for i in range(argc):
+                setattr(self, attrs[i], args[i])
+            return
+
+        for key, value in kwargs.items():
+            if key in attrs:
+                setattr(self, key, value)
