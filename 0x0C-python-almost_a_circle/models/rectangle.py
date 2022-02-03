@@ -23,6 +23,11 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        """Returns description of the rectangle"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height))
+
     # ------- Getters ------ #
     @property
     def width(self):
