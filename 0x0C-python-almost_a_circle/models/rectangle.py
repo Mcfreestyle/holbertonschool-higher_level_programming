@@ -47,20 +47,60 @@ class Rectangle(Base):
     # ---------- Setters --------- #
     @width.setter
     def width(self, value):
-        """The __width setter"""
+        """The __width setter
+
+        Raises:
+            TypeError: if the width isn't integer
+            ValueError: if the width is under or equals 0
+        """
+
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @height.setter
     def height(self, value):
-        """The __height setter"""
+        """The __height setter
+
+        Raises:
+            TypeError: if the height isn't integer
+            ValueError: if the height is under or equals 0
+        """
+
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @x.setter
     def x(self, value):
-        """The __x setter"""
+        """The __x setter
+
+        Raises:
+            TypeError: if x isn't integer
+            ValueError: if x is under 0
+        """
+
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @y.setter
     def y(self, value):
-        """The __y setter"""
+        """The __y setter
+
+        Raises:
+            TypeError: if y isn't integer
+            ValueError: if y is under 0
+        """
+
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
