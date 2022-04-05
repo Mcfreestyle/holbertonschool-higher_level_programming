@@ -6,6 +6,6 @@ const size = myArgv.length;
 
 if (size === 0 || size === 1) console.log(0);
 else {
-  myArgv.sort();
-  console.log(myArgv[size - 2]);
+  myArgv.sort(function (a, b) { return (b - a); });
+  console.log(myArgv[1]);
 }
