@@ -2,6 +2,8 @@
 
 exports.converter = function (base) {
   return function (num) {
-    return (num.toString(base));
+    if (typeof num !== 'undefined' && !isNaN(num)) {
+      return (num.toString(base));
+    }
   };
 };
