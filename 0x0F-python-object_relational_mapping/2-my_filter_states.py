@@ -16,8 +16,8 @@ if __name__ == "__main__":
                          db=db)
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC"
-                .format(state))
+    sql = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
+    cur.execute(sql.format(state))
     logs = cur.fetchall()
     for log in logs:
         print(log)
