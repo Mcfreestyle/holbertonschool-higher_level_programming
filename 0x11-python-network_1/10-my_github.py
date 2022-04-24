@@ -4,7 +4,6 @@
 """
 import requests
 from sys import argv
-from pprint import pprint
 
 if __name__ == '__main__':
     _, user, passwd = argv
