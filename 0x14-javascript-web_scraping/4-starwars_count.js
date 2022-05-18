@@ -18,4 +18,7 @@ axios.get(api, { responseType: 'json' })
       }
     }
     console.log(count);
+  })
+  .catch(err => {
+    console.log('Error:', err.response.status);
   });
